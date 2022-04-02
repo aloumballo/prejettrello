@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="trellop.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+  <body class="lo">
+    <div class="containeur" id="containeur">
+      <div id="button" class="button">
+        <button id="toggle" class="toggle">+</button>
+      </div>
+      <nav>
+        <div class="colonnes" id="colonnes">
+          <span>Colonne </span>
+          <button id="colo"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="note" id="note">
+          <span>Note</span>
+          <button id="not"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="corbeille" id="corbeille">
+          <i class="fa-solid fa-trash-o fa-3x" id="corbeille"></i>
+        </div>
+      </nav>
+      <div class="regenair">
+        
+             <div class="supp">
+              <!--  <button id="restaur">RS</button> -->
+
+            </div>
+            <!--  <div class="col1">
+            
+              
+
+                <div class="tete">
+                    <p>Colonne1</p>
+                    <button id="teteb">*</button>
+                </div>
+                <div class="col11">
+
+                   <button id="gauche"> <<  </button>
+  
+                  <input type="text" value="" id="input1">
+                  <button id="iii"> x </i></button>
+                    <button id="droit"> >> </button>
+                   
+                
+                </div>
+            </div>  -->      
+        <!-- <div class="col1">
+                
+
+                <div class="tete">
+                    <p>Colonne1</p>
+                </div>
+
+            </div> -->
+
+        <!-- <div class="col1">
+                
+
+                <div class="tete">
+                    <p>Colonne1</p>
+                </div>
+
+            </div> -->
+        <!--  <div class="col1">
+               
+
+                <div class="tete">
+                    <p>Colonne1</p>
+                </div>
+
+            </div> -->
+        <!--  <div class="col1">
+               
+
+                <div class="tete">
+                    <p>Colonne1</p>
+                </div>
+
+            </div> -->
+      </div>
+    </div>
+
+    <!--  <script src="scripttrello.js"></script> -->
+    <div class="modal-container" id="modal">
+      <div class="modal" id="modala">
+        <button class="close_btn" id="close">
+          <!--  <i class="fa-solid fa-plus"></i> -->
+          ×
+        </button>
+        <div class="modal_header"><h3>NOUVELLE TACHE</h3></div>
+        <div class="modal_content">
+          <p>Remplissez les informations de la nouvelle tache</p>
+          <form action="" id="form" name="form">
+            <div class="form-control">
+              <textarea rows="10" cols="40" id="textarea"></textarea>
+            </div>
+            <div class="form-control">
+              <label for="">Tache </label>
+              <input type="date" id="inputid" class="mballo" />
+             <!--  <small>Error Message</small> -->
+               <small class="aa">alouus</small>
+            </div>
+            <div class="form-control">
+              <label for="">Heure de debut </label>
+              <input type="time" id="inputidt" class="mballo" />
+              <small>Error Message</small>
+            </div>
+            <div class="form-control">
+              <label for="">Heure de fin </label>
+              <input type="time" id="inputidtt" class="mballo" />
+              <small>Error Message</small>
+            </div>
+            <input type="button" value="Ajouter" id="mballo" class="mballo" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+      <script src="scripttrello.js"></script>  
+  </body>
+</html>
