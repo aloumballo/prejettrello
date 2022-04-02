@@ -1,4 +1,5 @@
 const colonne = document.getElementById('colo');
+const colonnes = document.getElementById('colonnes');
 const toggle = document.getElementById('toggle');
 const restaur = document.getElementById('restaur');
 const aa = document.querySelector('.aa');
@@ -30,6 +31,7 @@ let i = 0;
 var j = 0;
 function creation() {
     const p = document.createElement('p');
+    p.setAttribute('class', 'te')
     const tete = document.createElement('div');
     /* pour supprimer la colonne(col1) */
     const teteb = document.createElement('button')
@@ -38,14 +40,37 @@ function creation() {
     teteb.innerHTML = 'x'
 
     t = 0;
-
+    /* suppression des colonnes */
+    
     teteb.addEventListener('click', (e) => {
+       
+        /* je recuperer dans une variable le div ou la colle est c(est a dire col1 ms en recuperer il est en chaine de caractere mm si avec le console log il affiche 0) */
+        var elParentId = e.target.parentElement.parentElement.id
+        /* ici le typeof me permet de savoir le type de la variable recuperer  elParentId et parseInt convertie le contenu en number */
+        /*  console.log(typeof (parseInt(elParentId)));   */
+        /*var elParentIdentier maintenent il est en number */
+        var elParentIdentier = parseInt(elParentId)
+        /* la je recupere le id de la colonne suivante */
+        const suivant = document.getElementById(elParentIdentier + 1)
+        /*  const colonne1 = document.getElementById('0') */
+        /* console.log(suivant); */
+        /* ici c pour desable le boutton qui ajoute la colonne  s'il y'a 5 colonne  */
         colonne.disabled = false;
-        e.target.parentElement.parentElement.remove()
+        /* ici je recupere le id de la colonne1 je je verifie s'il ya une colonne suivante c'est a dire si suivant est null ya pas de colonne devant notre colonne donc je supprime si non je supprime pas le else gere les autre colonne */
+        if (elParentId == "0" && suivant == null) {
+          
+            e.target.parentElement.parentElement.remove()
+        } else if (elParentId != "0") {
+            e.target.parentElement.parentElement.remove()
+           
+        }
+    
         compteur--;
+        refraiche() 
+       
     })
-
     const col1 = document.createElement('div');
+
     /* la je recupere regenair dans le js car je lai pas commenter dans le js contrairement a la clo1 */
     const regeneir = document.querySelector('.regenair');
     p.innerText = "colonne" + compteur;
@@ -95,15 +120,15 @@ close.addEventListener('click', () => {
 /* pour que le input du mondal viens dans la colonne */
 mballo.addEventListener('click', () => {
     validation()
-    /* bloquer que la tache pars au niveau de la colonne si le text arrea es vide */
+    /* bloquer que la tache pars au niveau de la colonne si le text arrea es vide*/
     if (textarea.value == '') {
         e.preventDefault()
 
     }
     const allColonne = document.querySelectorAll('.col1');
     taches(allColonne[0])
-   
-    
+
+
 })
 /* fonction pour les taches */
 function taches(colonne) {
@@ -128,12 +153,8 @@ function taches(colonne) {
 
     const input = document.createElement('input');
     /* pour recuperer le contenut du textarea au niveau du input */
-    input.value = textarea.value 
-   /*  let tabE = []
-    if (input.value = '') {
-        tabE.push('')
-    }
-    */
+    input.value = textarea.value
+
     const icone = document.createElement('i');
     icone.setAttribute('class', 'fa fa-trash-o');
     const buttondroit = document.createElement('button')
@@ -246,11 +267,20 @@ function showSuccess(input) {
 function validation() {
     const newD = moment();
     const dateSaissie = inputid.value
-    if (moment(newD).isAfter(dateSaissie,'day')) {
+    if (moment(newD).isAfter(dateSaissie, 'day')) {
         aa.className = 'vis';
         e.preventDefault()
-        
+
     } else {
-        
+
     }
 }
+/* function refraiche */
+function refraiche() {
+    const tabD = document.querySelectorAll('.te')
+    tabD.forEach((element, compteur) => {
+        element.innerHTML = 'colonne' + (compteur + 1);
+        element.parentElement.parentElement.id=compteur+1
+    })
+    
+}  
